@@ -1,0 +1,67 @@
+:root {
+  --fw: 600;
+  --fs: 100;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  overflow: hidden;
+  user-select: none;
+  background: black;
+}
+
+.stage {
+  opacity: 0;
+  font-size: 10vw;
+  line-height: 1;
+}
+
+.txt {
+  display: inline-block;
+  position: relative;
+  font-weight: var(--fw);
+  font-stretch: var(--fs);
+  cursor: grab;
+}
+
+.char {
+  display: inline-block;
+  position: relative;
+  transform-origin: center bottom;
+  white-space: pre;
+
+  background: linear-gradient(90deg, #00bfae, #8c1bff, #ffd600);
+  background-size: 400% 100%;
+  background-position: 0% 50%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 4s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 50% 0;
+  }
+}
+
+.grab {
+  cursor: grabbing;
+}
